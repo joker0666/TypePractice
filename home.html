@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Test</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/2e0154377a.js" crossorigin="anonymous"></script>
+    <div id="header">
+        <div class="logo">Type Faster</div>
+        <nav>
+            <ul id="navbar">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="index.html">Practice</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <a href="#" id="close"><i class="fas fa-times"> </i></a>
+            </ul> 
+        </nav>
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </div>
+
+    <section id="hero">
+        <h4>Typing Practice Challenge</h4>
+        <h2>Improve Your Typing Skills</h2>
+        <h1>Enhance Speed and Accuracy</h1>
+        <p>Level up your typing with interactive exercises and real-time feedback!</p>
+        <button id="startTypingBtn">Start Typing</button>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>Featured Ebooks</h2>
+        <p>Explore our collection of famous and entertaining books for reading and practice.</p>
+        <div class="pro-container">
+            <div class="pro" onclick="selectBook(1)">
+                <img src="img/books/book1.jpg" alt="Book 1">
+                <div class="des">
+                    <span>Elysia Starweaver</span>
+                    <h5>The Timeless Adventure</h5>
+                </div>
+            </div>
+            <div class="pro" onclick="selectBook(2)">
+                <img src="img/books/book1.jpg" alt="Book 2">
+                <div class="des">
+                    <span>Classic Novel</span>
+                    <h5>The Enchanted Garden</h5>
+                </div>
+            </div>
+            <div class="pro" onclick="selectBook(3)">
+                <img src="img/books/book1.jpg" alt="Book 3">
+                <div class="des">
+                    <span>Classic Novel</span>
+                    <h5>The Timeless Adventure3</h5>
+                </div>
+            </div>
+            <div class="pro" onclick="selectBook(4)">
+                <img src="img/books/book1.jpg" alt="Book 4">
+                <div class="des">
+                    <span>Classic Novel</span>
+                    <h5>The Timeless Adventure3</h5>
+                </div>
+            </div>
+            <!-- Add more book elements as needed -->
+        </div>
+      
+        <script>
+         function selectBook(bookId) {
+    // Store the selected book details in sessionStorage
+    const selectedBookDetails = generateBookDetails(bookId);
+    sessionStorage.setItem('selectedBookDetails', JSON.stringify(selectedBookDetails));
+
+    // Navigate to practice.html
+    window.location.href = 'practice.html';
+}
+
+            function generateBookDetails(bookId) {
+    // Add conditions to generate details for each book
+    switch (bookId) {
+            case 1:
+                return {
+                     title: "The Timeless Adventure",
+                    paragraphs: [
+                    "In the heart of mysteries, a timeless adventure unfolds, beckoning the brave at heart.",
+                    "Amidst ancient ruins, whispers of the past echo, revealing tales of heroes long forgotten.",
+                    "Beneath starlit skies, a journey begins, weaving destiny with threads of courage and fate.",
+                    "Through enchanted lands, the path winds, leading travelers to the threshold of the unknown.",
+                     "As shadows dance, a quest for truth awakens, unveiling the magic concealed in every step."
+                     ],
+                    author: "Elysia Starweaver",
+                    tags: ["Adventure", "Mystery", "Fantasy"]
+    };
+        case 2:
+            return {
+                title: "The Enchanted Garden",
+                paragraphs: [
+                "In the heart of the mystical forest, a secret garden blossomed with flowers that glowed in the moonlight.",
+                "Hidden from the world, it was said that anyone who entered would be granted a single wish.",
+                "Legends spoke of a brave soul who dared to step inside, unlocking the magic within.",
+                "The air was filled with the sweet scent of roses and the soft whispers of ancient trees."
+             
+                ],
+                author: "Elena Moon",
+                tags: ["Fantasy", "Magic", "Adventure"]
+            };
+        case 3:
+             return {
+                 title: "Voyage Across Time",
+                 paragraphs: [
+                "A ship sailed through the river of time, its sails billowing with the winds of ages past.",
+                "Crewed by time-travelers, it journeyed to eras where echoes of history lingered.",
+                "Each ripple on the temporal waters whispered tales of civilizations risen and fallen.",
+                "The chrononauts, explorers of temporal currents, sought the keys to unlock the mysteries of existence.",
+                "In their wake, the river carried the imprints of their voyage, a testament to humanity's quest for understanding."
+            ],
+            author: "Temporal Voyager",
+            tags: ["Time Travel", "Adventure", "History"]
+        };
+        case 4:
+             return {
+                title: "Whirlwind of Dreams",
+                paragraphs: [
+                "In the realm of dreams, a whirlwind carried wishes, weaving them into starry tapestries.",
+                "As slumber deepened, aspirations took flight, soaring through the cosmos of the subconscious.",
+                "Each dream held a piece of the dreamer's soul, a kaleidoscope of desires dancing in ethereal landscapes.",
+                "Moonbeams whispered promises, and shooting stars granted ephemeral glimpses of destiny.",
+                "In the silence of night, the whirlwind of dreams painted the canvas of the sleeping mind."
+            ],
+            author: "Astra Celestia",
+            tags: ["Dreams", "Imagination", "Fantasy"]
+        };
+        // Add more cases for additional books
+        default:
+            return {
+                title: "",
+                paragraphs: [],
+                author: "",
+                tags: []
+            };
+    }
+}
+        </script>
+        <script>
+            // Add a click event listener to the button
+            document.getElementById("startTypingBtn").addEventListener("click", function() {
+              // Navigate to index.html
+              window.location.href = 'index.html';
+            });
+          </script>
+
+          <script>
+            const bar =document.getElementById('bar');
+            const nav = document.getElementById('navbar');
+            const close = document.getElementById('close');
+            if(bar  && close){
+                bar.addEventListener('click', ()=>{
+                    nav.classList.add('activee');
+                });
+            
+          
+                close.addEventListener('click', ()=>{
+                    nav.classList.remove('activee');
+                })
+            }
+          </script>
+
+    </section>
+
+    <div id="footer">
+        <div class="social-media">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <!-- Add more social media links as needed -->
+        </div>
+        <div class="copyright">© 2024 HappyN00b:(</div>
+    </div>
+
+</body>
+</html>

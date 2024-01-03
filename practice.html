@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Test</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+  background-color: #f0f4f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div class="logo">Type Faster</div>
+      <nav>
+        <ul id="navbar">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#" class="active">Practice</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  <body>
+    <div class="container">
+      <div class="stats">
+        <p>Countdown: <span id="countdown">5s</span></p>
+        <p>Time: <span id="timer">0s</span></p>
+      </div>
+      <section id="practiceContent" >
+        <!-- Content dynamically loaded based on selected book -->
+        <h2 id="bookTitle">Book Title</h2>
+        <div id="bookParagraphs"></div>
+      </section>
+      <textarea rows="3" id="quote-input" placeholder="Click here to start the test.." onfocus="updatePlaceholder()"></textarea>
+      <button class="normal" id="stop-test" onclick="displayResult()">Stop Test</button>
+      <div class="result">
+        <h3>Result</h3>
+        <div class="wrapper">
+          <p>Accuracy: <span id="accuracy"></span></p>
+          <p>Speed: <span id="wpm"></span></p>
+          <p>Mistakes: <span id="mistakes"></span></p>
+        </div>
+      </div>
+
+      <div class="quote-info" id="quoteInfo" style="display: none;">
+        <h3>Quote Information</h3>
+        <div class="wrapper">
+          <p>Author: <span id="author"></span></p>
+          <p>Tags: <span id="tags"></span></p>
+          <button class="try-again-button">Try Again</button>
+        </div>
+      </div>
+    </div>
+    <script>const tryAgainButton = document.querySelector(".try-again-button");
+
+      tryAgainButton.addEventListener("click", () => {
+        window.location.reload(); // Refresh the page to load a new quote
+      });
+      </script>
+    <script src="practice.js"></script>
+  </body>
+</html>
